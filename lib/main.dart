@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_cart_app/screens/cart.dart';
 import 'package:shopping_cart_app/screens/details.dart';
+import 'package:shopping_cart_app/screens/home.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,8 +18,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.grey,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: DetailsPage(title: 'Flutter Demo Home Page'),
+      home: HomePage(),
       routes: {
+        '/home': (context) => HomePage(),
         '/details': (context) => DetailsPage(),
         '/cart': (context) => CartPage(),
       },
