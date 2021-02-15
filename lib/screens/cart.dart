@@ -25,23 +25,27 @@ class _CartPageState extends State<CartPage> {
         ),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Padding(
+              padding: EdgeInsets.only(left: 10),
+              child: Container(
+                color: Colors.white,
+                width: MediaQuery.of(context).size.width,
+                child: Text(
+                  'My Order',
+                  style: TextStyle(
+                      fontSize: 35,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
+                ),
+              )),
           Container(
               alignment: Alignment.topLeft,
               color: Colors.white,
-              height: MediaQuery.of(context).size.height * 0.46,
+              height: MediaQuery.of(context).size.height * 0.42,
               child: ListView(
                 children: [
-                  ListTile(
-                    contentPadding: EdgeInsets.only(left: 15),
-                    leading: Text(
-                      'My Order',
-                      style: TextStyle(
-                          fontSize: 35,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),
-                    ),
-                  ),
                   CartItemTile(
                       image: '', article: 'Brown Sugar', count: 1, price: 8.99),
                   CartItemTile(
