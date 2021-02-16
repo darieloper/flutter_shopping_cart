@@ -202,7 +202,7 @@ class _HomePageState extends State<HomePage> {
             ),
             Expanded(
                 child: Padding(
-              padding: EdgeInsets.only(top: 10, bottom: 10),
+              padding: EdgeInsets.only(top: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -228,6 +228,31 @@ class _HomePageState extends State<HomePage> {
             )),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.title), label: 'Home'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.wallet_giftcard,
+                  color: Colors.grey.shade500, size: 26),
+              label: 'Gifts'),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.favorite_border_outlined,
+                color: Colors.grey.shade500,
+                size: 26,
+              ),
+              label: 'Favourites'),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.person_outline,
+                color: Colors.grey.shade500,
+                size: 26,
+              ),
+              label: 'Contacts'),
+        ],
+        selectedItemColor: Colors.lightBlue,
+        selectedFontSize: 17,
       ),
     );
   }
