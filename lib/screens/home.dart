@@ -19,6 +19,10 @@ class _HomePageState extends State<HomePage> {
     Navigator.pushNamed(this.context, '/cart');
   }
 
+  void _goToDetail() {
+    Navigator.pushNamed(this.context, '/details');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -236,94 +240,130 @@ class _HomePageState extends State<HomePage> {
         children: [
           Expanded(
               child: Padding(
-            padding: EdgeInsets.all(10),
-            child: Container(
-              height: MediaQuery.of(context).size.height / 3.5,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.yellow),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(10),
-                    child: Text(
-                      '\$8.48',
-                      style: TextStyle(color: Colors.white, fontSize: 20),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 20, right: 20, bottom: 10),
-                    child: Image.network(
-                      'http://www.pngmart.com/files/1/Burger-Transparent-PNG.png',
-                      width: 130,
-                      height: 120,
-                    ),
-                  ),
-                  Container(
-                    height: 50,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: Colors.black),
-                    child: Center(
-                      child: Text(
-                        'Brown Sugar',
-                        style: TextStyle(color: Colors.white, fontSize: 15),
+                  padding: EdgeInsets.all(10),
+                  child: Stack(
+                    children: [
+                      Container(
+                        height: MediaQuery.of(context).size.height / 3.5,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.yellow),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.all(10),
+                              child: Text(
+                                '\$8.48',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 20),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(
+                                  left: 20, right: 20, bottom: 10),
+                              child: Image.network(
+                                'http://www.pngmart.com/files/1/Burger-Transparent-PNG.png',
+                                width: 130,
+                                height: 120,
+                              ),
+                            ),
+                            Container(
+                              height: 50,
+                              width: MediaQuery.of(context).size.width,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(15),
+                                      topRight: Radius.circular(15),
+                                      bottomLeft: Radius.circular(20),
+                                      bottomRight: Radius.circular(20)),
+                                  color: Colors.black),
+                              child: Center(
+                                child: Text(
+                                  'Brown Sugar',
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 15),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                  )
-                ],
-              ),
-            ),
-          )),
+                      Positioned.fill(
+                          child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          borderRadius: BorderRadius.circular(20),
+                          onTap: _goToDetail,
+                        ),
+                      ))
+                    ],
+                  ))),
           Expanded(
               child: Padding(
-            padding: EdgeInsets.all(10),
-            child: Container(
-              height: MediaQuery.of(context).size.height / 3.5,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.yellow),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(10),
-                    child: Text(
-                      '\$10.99',
-                      style: TextStyle(color: Colors.white, fontSize: 20),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 20, right: 20, bottom: 10),
-                    child: Image.network(
-                      'http://www.pngmart.com/files/1/Burger-Transparent-PNG.png',
-                      width: 130,
-                      height: 120,
-                    ),
-                  ),
-                  Container(
-                    height: 50,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: Colors.black),
-                    child: Center(
-                      child: Text(
-                        'Cheesy Jalapenos',
-                        style: TextStyle(color: Colors.white, fontSize: 15),
+                  padding: EdgeInsets.all(10),
+                  child: Stack(
+                    children: [
+                      Container(
+                        height: MediaQuery.of(context).size.height / 3.5,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.yellow),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.all(10),
+                              child: Text(
+                                '\$10.99',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 20),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(
+                                  left: 20, right: 20, bottom: 10),
+                              child: Image.network(
+                                'http://www.pngmart.com/files/1/Burger-Transparent-PNG.png',
+                                width: 130,
+                                height: 120,
+                              ),
+                            ),
+                            Container(
+                              height: 50,
+                              width: MediaQuery.of(context).size.width,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(15),
+                                      topRight: Radius.circular(15),
+                                      bottomLeft: Radius.circular(20),
+                                      bottomRight: Radius.circular(20)),
+                                  color: Colors.black),
+                              child: Center(
+                                child: Text(
+                                  'Cheesy Jalapenos',
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 15),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                  )
-                ],
-              ),
-            ),
-          )),
+                      Positioned.fill(
+                          child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          borderRadius: BorderRadius.circular(20),
+                          onTap: _goToDetail,
+                        ),
+                      ))
+                    ],
+                  ))),
         ],
       ),
       Row(
@@ -332,94 +372,130 @@ class _HomePageState extends State<HomePage> {
         children: [
           Expanded(
               child: Padding(
-            padding: EdgeInsets.all(10),
-            child: Container(
-              height: MediaQuery.of(context).size.height / 3.5,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.yellow),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(10),
-                    child: Text(
-                      '\$8.48',
-                      style: TextStyle(color: Colors.white, fontSize: 20),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 20, right: 20, bottom: 10),
-                    child: Image.network(
-                      'http://www.pngmart.com/files/1/Burger-Transparent-PNG.png',
-                      width: 130,
-                      height: 120,
-                    ),
-                  ),
-                  Container(
-                    height: 50,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: Colors.black),
-                    child: Center(
-                      child: Text(
-                        'Brown Sugar',
-                        style: TextStyle(color: Colors.white, fontSize: 15),
+                  padding: EdgeInsets.all(10),
+                  child: Stack(
+                    children: [
+                      Container(
+                        height: MediaQuery.of(context).size.height / 3.5,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.yellow),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.all(10),
+                              child: Text(
+                                '\$8.48',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 20),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(
+                                  left: 20, right: 20, bottom: 10),
+                              child: Image.network(
+                                'http://www.pngmart.com/files/1/Burger-Transparent-PNG.png',
+                                width: 130,
+                                height: 120,
+                              ),
+                            ),
+                            Container(
+                              height: 50,
+                              width: MediaQuery.of(context).size.width,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(15),
+                                      topRight: Radius.circular(15),
+                                      bottomLeft: Radius.circular(20),
+                                      bottomRight: Radius.circular(20)),
+                                  color: Colors.black),
+                              child: Center(
+                                child: Text(
+                                  'Brown Sugar',
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 15),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                  )
-                ],
-              ),
-            ),
-          )),
+                      Positioned.fill(
+                          child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          borderRadius: BorderRadius.circular(20),
+                          onTap: _goToDetail,
+                        ),
+                      ))
+                    ],
+                  ))),
           Expanded(
               child: Padding(
-            padding: EdgeInsets.all(10),
-            child: Container(
-              height: MediaQuery.of(context).size.height / 3.5,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.yellow),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(10),
-                    child: Text(
-                      '\$10.99',
-                      style: TextStyle(color: Colors.white, fontSize: 20),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 20, right: 20, bottom: 10),
-                    child: Image.network(
-                      'http://www.pngmart.com/files/1/Burger-Transparent-PNG.png',
-                      width: 130,
-                      height: 120,
-                    ),
-                  ),
-                  Container(
-                    height: 50,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: Colors.black),
-                    child: Center(
-                      child: Text(
-                        'Cheesy Jalapenos',
-                        style: TextStyle(color: Colors.white, fontSize: 15),
+                  padding: EdgeInsets.all(10),
+                  child: Stack(
+                    children: [
+                      Container(
+                        height: MediaQuery.of(context).size.height / 3.5,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.yellow),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.all(10),
+                              child: Text(
+                                '\$10.99',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 20),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(
+                                  left: 20, right: 20, bottom: 10),
+                              child: Image.network(
+                                'http://www.pngmart.com/files/1/Burger-Transparent-PNG.png',
+                                width: 130,
+                                height: 120,
+                              ),
+                            ),
+                            Container(
+                              height: 50,
+                              width: MediaQuery.of(context).size.width,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(15),
+                                      topRight: Radius.circular(15),
+                                      bottomLeft: Radius.circular(20),
+                                      bottomRight: Radius.circular(20)),
+                                  color: Colors.black),
+                              child: Center(
+                                child: Text(
+                                  'Cheesy Jalapenos',
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 15),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                  )
-                ],
-              ),
-            ),
-          )),
+                      Positioned.fill(
+                          child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          borderRadius: BorderRadius.circular(20),
+                          onTap: _goToDetail,
+                        ),
+                      ))
+                    ],
+                  ))),
         ],
       ),
     ];

@@ -10,8 +10,12 @@ class DetailsPage extends StatefulWidget {
 }
 
 class _DetailsPageState extends State<DetailsPage> {
-  void _goToCart(BuildContext context) {
-    Navigator.pushNamed(context, '/cart');
+  void _goToCart() {
+    Navigator.pushNamed(this.context, '/cart');
+  }
+
+  void _goBack() {
+    Navigator.pop(this.context);
   }
 
   @override
@@ -25,7 +29,7 @@ class _DetailsPageState extends State<DetailsPage> {
             child: IconButton(
               alignment: Alignment.topLeft,
               icon: Icon(Icons.chevron_left, color: Colors.black),
-              onPressed: null,
+              onPressed: _goBack,
               iconSize: 32,
             ),
           ),
@@ -39,12 +43,12 @@ class _DetailsPageState extends State<DetailsPage> {
           ),
           actions: [
             Container(
-              alignment: Alignment.topRight,
-              child: IconButton(
+                alignment: Alignment.topRight,
+                child: IconButton(
                   padding: EdgeInsets.all(4),
                   icon: Icon(Icons.shopping_basket),
-                  onPressed: () => _goToCart(context)),
-            )
+                  onPressed: _goToCart,
+                ))
           ],
           bottomOpacity: 0.0,
           elevation: 0.0,
